@@ -8,11 +8,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.ejemplo.facturacion.entities.Usuario;
 
-public class JPADetalleUsuarios implements UserDetails  {
+public class JPADetalleUsuarios implements UserDetails {
     private final Usuario usuario;
 
     public JPADetalleUsuarios(Usuario usuario) {
-      this.usuario = usuario;
+        this.usuario = usuario;
     }
 
     @Override
@@ -22,7 +22,7 @@ public class JPADetalleUsuarios implements UserDetails  {
 
     @Override
     public String getPassword() {
-        return usuario.getContraseña();
+        return usuario.getPassword();
     }
 
     @Override
@@ -30,4 +30,3 @@ public class JPADetalleUsuarios implements UserDetails  {
         return List.of(usuario::getAutoridad);
     }
 }
-
